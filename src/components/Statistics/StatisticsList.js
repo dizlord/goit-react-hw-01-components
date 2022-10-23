@@ -1,10 +1,16 @@
 import PropTypes, { shape } from 'prop-types';
 
+import getRandomHexColor from 'components/utility';
+
 const StatisticsList = ({ items }) => {
   return (
     <ul className="stat-list">
       {items.map(item => (
-        <li className="item" key={item.id}>
+        <li
+          className="item"
+          key={item.id}
+          style={{ backgroundColor: getRandomHexColor() }}
+        >
           <span className="label">{item.label}</span>
           <span className="percentage">{item.percentage}%</span>
         </li>
