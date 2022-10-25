@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
+import { Wrapper, Description, Avatar } from './Profile.styled';
 
-const Profile = ({ userName, tag, location, avatar, stats }) => {
+const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt={userName} className="avatar" />
-        <p className="name">{userName}</p>
+    <Wrapper>
+      <Description>
+        <Avatar src={avatar} alt={username}/>
+        <p className="name">{username}</p>
         <p className="tag">@{tag}</p>
         <p className="location">{location}</p>
-      </div>
+      </Description>
 
       <ul className="stats">
         <li>
@@ -24,7 +25,7 @@ const Profile = ({ userName, tag, location, avatar, stats }) => {
           <span className="quantity">{stats.likes}</span>
         </li>
       </ul>
-    </div>
+    </Wrapper>
   );
 };
 
