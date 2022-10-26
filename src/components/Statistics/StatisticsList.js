@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import getRandomHexColor from 'components/utility';
+import getRandomHexColor from 'components/utils/utility';
 
 const StatisticsList = ({ items }) => {
   return (
