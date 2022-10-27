@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  max-width: 250px;
+  max-width: ${p => p.theme.sizes[3]}px;;
   margin-left: auto;
   margin-right: auto;
   margin-top: ${p => p.theme.space[5]}px;
   text-align: center;
   background-color: ${p => p.theme.colors.background};
-  border-radius: ${p => p.theme.redii.normal};
+  border-radius: ${p => p.theme.radii.normal};
   box-shadow: ${p => p.theme.shadows.card};
 `;
 
@@ -19,11 +19,11 @@ export const Description = styled.div`
 export const Avatar = styled.img`
   display: inline-block;
   margin-bottom: ${p => p.theme.space[5]}px;
-  width: 100px;
-  height: 100px;
+  width: ${p => p.theme.sizes[1]}px;;
+  height: ${p => p.theme.sizes[1]}px;;
   background-color: ${p => p.theme.colors.img};
   border: ${p => p.theme.borders.none};
-  border-radius: ${p => p.theme.redii.round};
+  border-radius: ${p => p.theme.radii.round};
 `;
 
 export const UserName = styled.p`

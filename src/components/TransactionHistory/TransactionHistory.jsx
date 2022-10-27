@@ -1,31 +1,36 @@
 import PropTypes from 'prop-types';
 
 import TransactionHistoryItem from './TransactionHistoryItem';
+import Box from 'components/utils/Box';
+import { TableHead, HeadString, HeadColumn, TableBody } from './TransactionHistory.styled';
 
 const TransactionHistory = ({ items }) => {
+  let count = 0;
   return (
-    <table className="transaction-history">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
+    <Box as="table" textAlign="center" mx="auto" my={5} boxShadow="card" borderRadius="normal">
+      <TableHead>
+        <HeadString>
+          <HeadColumn>Type</HeadColumn>
+          <HeadColumn>Amount</HeadColumn>
+          <HeadColumn>Currency</HeadColumn>
+        </HeadString>
+      </TableHead>
 
-      <tbody>
+      <TableBody>
         {items.map(item => {
+          count += 1;
           return (
             <TransactionHistoryItem
               key={item.id}
               type={item.type}
               amount={item.amount}
               currency={item.currency}
+              count={count}
             />
           );
         })}
-      </tbody>
-    </table>
+      </TableBody>
+    </Box>
   );
 };
 

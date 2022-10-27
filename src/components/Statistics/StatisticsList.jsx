@@ -1,21 +1,27 @@
 import PropTypes from 'prop-types';
 
 import getRandomHexColor from 'components/utils/utility';
+import Box from 'components/utils/Box';
+import { StatisticsLabel, StatisticsItem, StatisticsPercentage } from './StatisticsList.styled';
 
 const StatisticsList = ({ items }) => {
   return (
-    <ul className="stat-list">
+    <Box
+      as="ul"
+      display="grid"
+      gridAutoFlow="column"
+      gridAutoColumns="minmax(100px, 1fr)"
+    >
       {items.map(item => (
-        <li
-          className="item"
+        <StatisticsItem
           key={item.id}
           style={{ backgroundColor: getRandomHexColor() }}
         >
-          <span className="label">{item.label}</span>
-          <span className="percentage">{item.percentage}%</span>
-        </li>
+          <StatisticsLabel>{item.label}</StatisticsLabel>
+          <StatisticsPercentage>{item.percentage}%</StatisticsPercentage>
+        </StatisticsItem>
       ))}
-    </ul>
+    </Box>
   );
 };
 
