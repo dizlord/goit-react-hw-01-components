@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  max-width: ${p => p.theme.sizes[3]}px;;
+  max-width: ${p => p.theme.sizes[3]}px;
   margin-left: auto;
   margin-right: auto;
   margin-top: ${p => p.theme.space[5]}px;
